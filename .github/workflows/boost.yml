@@ -22,3 +22,4 @@ jobs:
         with:
           action: scan
           api_token: ${{ secrets.BOOST_API_TOKEN }}
+          additional_args: "--log-level=DEBUG"
