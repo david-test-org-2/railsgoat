@@ -21,8 +21,8 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: scan
-          additional_args: --partial --project=david-test-org-FOUT/railgoat
-          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          additional_args: '--partial --project=david-test-org-FOUR/railgoat'
+          api_token: ${{ secrets.BOOST_API_TOKEN_STAGE }}
   complete_scan:
     name: Complete Scan
     needs: [scan_job, semgrep_job]
@@ -34,4 +34,4 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: complete
-          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          api_token: ${{ secrets.BOOST_API_TOKEN_STAGE }}
