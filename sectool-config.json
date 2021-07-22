@@ -1,0 +1,9 @@
+{
+  "violation-policy": [
+    {
+      "rules": {
+        "insecure-crypto-algorithm": "alert"
+      }
+    }
+  ]
+}
