@@ -21,7 +21,7 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: scan
-          additional_args: --partial --project=david-test-org-2/railsgoat
+          additional_args: --partial --project=david-test-org-TWO/railsgoat
           api_endpoint: https://api.boostsecurity.dev
           api_token: ${{ secrets.BOOST_API_TOKEN_STAGE }}
   complete_scan:
