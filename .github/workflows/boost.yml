@@ -25,7 +25,7 @@ jobs:
           api_token: ${{ secrets.BOOST_API_TOKEN_STAGE }}
   complete_scan:
     name: Complete Scan
-    needs: [scan_job, semgrep_job]
+    needs: [scan_job]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
