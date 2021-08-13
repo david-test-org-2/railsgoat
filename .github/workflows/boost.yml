@@ -36,6 +36,19 @@ jobs:
           additional_args: --partial
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           exec_command: docker run -v %CWD%:/src returntocorp/semgrep:0.58.2 --disable-version-check --no-rewrite-rule-ids -q --sarif --config /src/.semgrep/custom-rules.yml
+  brakeman_job:
+    name: Brakeman Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Brakeman Scanner
+        uses: peaudecastor/boost-security-scanner-github@v2
+        with:
+          action: exec
+          additional_args: --partial
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          exec_command: "docker run -v %CWD%:/code presidentbeef/brakeman --format sarif --force" # an example of using docker to run a SARIF command
   complete_scan:
     name: Complete Scan
     needs: [scan_job, semgrep_job]
