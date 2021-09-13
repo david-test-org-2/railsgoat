@@ -3,7 +3,7 @@ def is_valid?(token)
 
       # Fetch the user by their id, and hash their email address
       @user = User.find_by(id: $~[:user])
-      email = Digest::MD5.hexdigest(@user.email)
+      email = Digest::MD5.hexdigest(@user.email) #noboost
         
       # more hashing
       email = Digest::MD5.hexdigest(@user.email)
