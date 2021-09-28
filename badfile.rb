@@ -7,6 +7,9 @@ def is_valid?(token)
         
       # more hashing
       email = Digest::MD5.hexdigest(@user.email)
+      
+      # more hashing
+      email = Digest::MD5.hexdigest(@user.emails)
         
       # new hash
       emails = Digest::MD5.hexdigest(@user.email)
