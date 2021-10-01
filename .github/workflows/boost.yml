@@ -21,7 +21,7 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: scan
-          additional_args: --partial
+          additional_args: --partial --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
   semgrep_job:
@@ -34,7 +34,7 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: exec
-          additional_args: --partial
+          additional_args: --partial --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
           exec_command: docker run -v %CWD%:/src returntocorp/semgrep:0.58.2 --disable-version-check --no-rewrite-rule-ids -q --sarif --config /src/.semgrep/custom-rules.yml
@@ -49,5 +49,6 @@ jobs:
         uses: peaudecastor/boost-security-scanner-github@v2
         with:
           action: complete
+          additional_args: --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
