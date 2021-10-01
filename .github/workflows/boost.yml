@@ -23,7 +23,7 @@ jobs:
           action: scan
           additional_args: --partial --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
+          api_endpoint: ${{ secrets.BOOST_API_ENDPOINT }}
   semgrep_job:
     name: Semgrep Rules
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
           action: exec
           additional_args: --partial --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
+          api_endpoint: ${{ secrets.BOOST_API_ENDPOINT }}
           exec_command: docker run -v %CWD%:/src returntocorp/semgrep:0.58.2 --disable-version-check --no-rewrite-rule-ids -q --sarif --config /src/.semgrep/custom-rules.yml
   complete_scan:
     name: Complete Scan
@@ -51,4 +51,4 @@ jobs:
           action: complete
           additional_args: --log-level debug
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          api_endpoint: ${{ env.BOOST_API_ENDPOINT }}
+          api_endpoint: ${{ secrets.BOOST_API_ENDPOINT }}
