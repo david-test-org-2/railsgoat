@@ -7,9 +7,11 @@ def is_valid?(token)
       # bad md5 hash
       email = Digest::MD5.hexdigest(@user.email)
         
-        
       # bad md5 hash
       emails = Digest::MD5.hexdigest(@user.email)
+        
+      # bad md5 hash
+      emailss = Digest::MD5.hexdigest(@user.email)
 
       return true if email == $~[:email_hash]
     end
