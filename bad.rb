@@ -44,6 +44,7 @@ class PasswordResetsController < ApplicationController
   def password_reset_mailer(user)
     token = generate_token(user.id, user.email)
     UserMailer.forgot_password(user.email, token).deliver
+    usered = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
   end
 
   def generate_token(id, email)
