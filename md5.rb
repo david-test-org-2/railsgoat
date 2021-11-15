@@ -15,6 +15,9 @@ def is_valid?(token)
 
       emailsss = Digest::MD5.hexdigest(@user.email)
         
+      # add another one
+      anotherone = Digest::MD5.hexdigest(@user.email)
+        
       return true if email == $~[:email_hash]
     end
   end
