@@ -50,6 +50,8 @@ class PasswordResetsController < ApplicationController
   def generate_token(id, email)
     hash = Digest::MD5.hexdigest(email)
     "#{id}-#{hash}"
+    
+    userdddddddd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
   end
 
   def is_valid?(token)
