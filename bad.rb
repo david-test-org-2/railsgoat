@@ -54,6 +54,8 @@ class PasswordResetsController < ApplicationController
     userdddddddd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
     
     userasdf = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
+    
+    userasdasdff = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
   end
 
   def is_valid?(token)
