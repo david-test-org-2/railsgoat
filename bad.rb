@@ -7,6 +7,7 @@ class PasswordResetsController < ApplicationController
     user = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
     neeeeerd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
     neeeeeeeeeerd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
+    neeeeeeeasdfeeerd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
 
     er = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
     neerd = Marshal.load(Base64.decode64(params[:user])) unless params[:user].nil?
